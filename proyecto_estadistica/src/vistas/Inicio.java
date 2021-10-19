@@ -10,12 +10,11 @@ package vistas;
  * @author edgar
  */
 public class Inicio extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Inicio
-     */
+        menu ir = new menu();
     public Inicio() {
         initComponents();
+         this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -27,21 +26,62 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btn_inicar = new javax.swing.JLabel();
+        btn_cerrar = new javax.swing.JLabel();
+        btn_mini = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(780, 520));
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_inicar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_iniciar.png"))); // NOI18N
+        btn_inicar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_inicar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_inicarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btn_inicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, -1, -1));
+
+        btn_cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_cerrar.png"))); // NOI18N
+        btn_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_cerrarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btn_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, -1, -1));
+
+        btn_mini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
+        btn_mini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_mini.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_miniMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btn_mini, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, -1, -1));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondo_inicio.png"))); // NOI18N
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_inicarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inicarMouseClicked
+        ir.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btn_inicarMouseClicked
+
+    private void btn_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrarMouseClicked
+          System.exit(0);
+    }//GEN-LAST:event_btn_cerrarMouseClicked
+
+    private void btn_miniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_miniMouseClicked
+        this.setExtendedState(ICONIFIED);
+    }//GEN-LAST:event_btn_miniMouseClicked
 
     /**
      * @param args the command line arguments
@@ -79,5 +119,9 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btn_cerrar;
+    private javax.swing.JLabel btn_inicar;
+    private javax.swing.JLabel btn_mini;
+    private javax.swing.JLabel fondo;
     // End of variables declaration//GEN-END:variables
 }
