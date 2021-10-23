@@ -10,7 +10,7 @@ package vistas;
  * @author edgar
  */
 public class Inicio extends javax.swing.JFrame {
-        menu ir = new menu();
+        menu1 ir = new menu1();
     public Inicio() {
         initComponents();
          this.setLocationRelativeTo(null);
@@ -52,6 +52,9 @@ public class Inicio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_cerrarMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cerrarMouseEntered(evt);
+            }
         });
         getContentPane().add(btn_cerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, -1, -1));
 
@@ -82,6 +85,10 @@ public class Inicio extends javax.swing.JFrame {
     private void btn_miniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_miniMouseClicked
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_btn_miniMouseClicked
+
+    private void btn_cerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrarMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_cerrarMouseEntered
 
     /**
      * @param args the command line arguments
