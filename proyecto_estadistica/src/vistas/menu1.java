@@ -5,6 +5,8 @@
  */
 package vistas;
 
+import teoremas.teorema1;
+
 /**
  *
  * @author edgar
@@ -50,6 +52,11 @@ public class menu1 extends javax.swing.JFrame {
 
         teo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema1.png"))); // NOI18N
         teo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo1MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
         teo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema2.png"))); // NOI18N
@@ -124,6 +131,12 @@ public class menu1 extends javax.swing.JFrame {
        ventana2.setVisible(true);
        dispose();
     }//GEN-LAST:event_sigueMouseClicked
+
+    private void teo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo1MouseClicked
+        teorema1 teo1 = new teorema1();
+        teo1.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo1MouseClicked
 
     /**
      * @param args the command line arguments
