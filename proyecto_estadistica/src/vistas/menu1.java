@@ -6,6 +6,7 @@
 package vistas;
 
 import teoremas.teorema1;
+import teoremas.teorema2;
 
 /**
  *
@@ -57,27 +58,32 @@ public class menu1 extends javax.swing.JFrame {
                 teo1MouseClicked(evt);
             }
         });
-        getContentPane().add(teo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+        getContentPane().add(teo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 300, -1, -1));
 
         teo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema2.png"))); // NOI18N
         teo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 120, -1, -1));
+        teo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(teo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 90, -1, -1));
 
         teo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema3.png"))); // NOI18N
         teo3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, -1, -1));
+        getContentPane().add(teo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 300, -1, -1));
 
         teo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema4.png"))); // NOI18N
         teo4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 120, -1, -1));
+        getContentPane().add(teo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, -1, -1));
 
         teo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema5.png"))); // NOI18N
         teo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, -1, -1));
+        getContentPane().add(teo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(794, 300, -1, -1));
 
         teo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema6.png"))); // NOI18N
         teo6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 120, -1, -1));
+        getContentPane().add(teo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 90, -1, -1));
 
         btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
         btnmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -86,7 +92,7 @@ public class menu1 extends javax.swing.JFrame {
                 btnminiMouseClicked(evt);
             }
         });
-        getContentPane().add(btnmini, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 5, -1, -1));
+        getContentPane().add(btnmini, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
 
         btncerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_cerrar.png"))); // NOI18N
         btncerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -95,7 +101,7 @@ public class menu1 extends javax.swing.JFrame {
                 btncerrarMouseClicked(evt);
             }
         });
-        getContentPane().add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 5, -1, -1));
+        getContentPane().add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, -1, -1));
 
         marcador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/marcador1.png"))); // NOI18N
         getContentPane().add(marcador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
@@ -110,9 +116,9 @@ public class menu1 extends javax.swing.JFrame {
                 sigueMouseClicked(evt);
             }
         });
-        getContentPane().add(sigue, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 530, -1, -1));
+        getContentPane().add(sigue, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 650, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondo-18.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -137,6 +143,12 @@ public class menu1 extends javax.swing.JFrame {
         teo1.setVisible(true);
         dispose();
     }//GEN-LAST:event_teo1MouseClicked
+
+    private void teo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo2MouseClicked
+      teorema2 teo2 = new teorema2();
+      teo2.setVisible(true);
+      dispose();
+    }//GEN-LAST:event_teo2MouseClicked
 
     /**
      * @param args the command line arguments

@@ -32,11 +32,11 @@ public class menu2 extends javax.swing.JFrame {
         teo4 = new javax.swing.JLabel();
         teo5 = new javax.swing.JLabel();
         teo6 = new javax.swing.JLabel();
-        btnmini = new javax.swing.JLabel();
-        btncerrar = new javax.swing.JLabel();
         marcador1 = new javax.swing.JLabel();
         marcador2 = new javax.swing.JLabel();
         sigue = new javax.swing.JLabel();
+        btnmini = new javax.swing.JLabel();
+        btncerrar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,45 +45,27 @@ public class menu2 extends javax.swing.JFrame {
 
         teo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema7.png"))); // NOI18N
         teo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+        getContentPane().add(teo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 300, -1, -1));
 
         teo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema8.png"))); // NOI18N
         teo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 120, -1, -1));
+        getContentPane().add(teo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 90, -1, -1));
 
         teo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema9.png"))); // NOI18N
         teo3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, -1, -1));
+        getContentPane().add(teo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(417, 300, -1, -1));
 
         teo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema10.png"))); // NOI18N
         teo4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 120, -1, -1));
+        getContentPane().add(teo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 90, -1, -1));
 
         teo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema11.png"))); // NOI18N
         teo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, -1, -1));
+        getContentPane().add(teo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(795, 300, -1, -1));
 
         teo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema12.png"))); // NOI18N
         teo6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(teo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 120, -1, -1));
-
-        btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
-        btnmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnmini.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnminiMouseClicked(evt);
-            }
-        });
-        getContentPane().add(btnmini, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 5, -1, -1));
-
-        btncerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_cerrar.png"))); // NOI18N
-        btncerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btncerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btncerrarMouseClicked(evt);
-            }
-        });
-        getContentPane().add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 5, -1, -1));
+        getContentPane().add(teo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(985, 90, -1, -1));
 
         marcador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/marcador1.png"))); // NOI18N
         getContentPane().add(marcador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, -1, -1));
@@ -98,13 +80,37 @@ public class menu2 extends javax.swing.JFrame {
                 sigueMouseClicked(evt);
             }
         });
-        getContentPane().add(sigue, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 530, -1, -1));
+        getContentPane().add(sigue, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 650, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondo.png"))); // NOI18N
+        btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
+        btnmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnmini.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnminiMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnmini, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 10, -1, -1));
+
+        btncerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_cerrar.png"))); // NOI18N
+        btncerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btncerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncerrarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btncerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 10, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondo-18.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sigueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sigueMouseClicked
+       menu1 ventana1 = new menu1();
+       ventana1.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_sigueMouseClicked
 
     private void btnminiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnminiMouseClicked
         this.setExtendedState(ICONIFIED);
@@ -113,12 +119,6 @@ public class menu2 extends javax.swing.JFrame {
     private void btncerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btncerrarMouseClicked
-
-    private void sigueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sigueMouseClicked
-       menu1 ventana1 = new menu1();
-       ventana1.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_sigueMouseClicked
 
     /**
      * @param args the command line arguments
