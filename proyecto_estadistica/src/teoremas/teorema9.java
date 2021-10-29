@@ -7,20 +7,25 @@ package teoremas;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author edgar
  */
-public class teorema4 extends javax.swing.JFrame {
+public class teorema9 extends javax.swing.JFrame {
+
     ArrayList<String> dato = new ArrayList<String>();
-   int valor=0,resul=0,contador=-1,multi=1,resul2=1,fact=1,divi=0;
-   String parcial,conver;
-    public teorema4() {
+    double contador = -1;
+    double resul = 0.00, valor = 0.00,resul2=0.00,validacion=0.00;
+    String parcial, conver;
+    
+
+    public teorema9() {
         initComponents();
         this.setLocationRelativeTo(null);
-         numero.setBackground(new java.awt.Color(0,0,0,1));
-        
+        numero.setBackground(new java.awt.Color(0, 0, 0, 1));
+
     }
 
     /**
@@ -36,7 +41,6 @@ public class teorema4 extends javax.swing.JFrame {
         btnmini = new javax.swing.JLabel();
         resu = new javax.swing.JLabel();
         texto2 = new javax.swing.JLabel();
-        texto1 = new javax.swing.JLabel();
         btncerrrar = new javax.swing.JLabel();
         btncalc = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JLabel();
@@ -60,7 +64,7 @@ public class teorema4 extends javax.swing.JFrame {
                 numeroKeyPressed(evt);
             }
         });
-        getContentPane().add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(354, 205, 90, 30));
+        getContentPane().add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 205, 80, 30));
 
         btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
         btnmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -74,17 +78,12 @@ public class teorema4 extends javax.swing.JFrame {
         resu.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         resu.setForeground(new java.awt.Color(8, 0, 65));
         resu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(resu, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, 410, 30));
+        getContentPane().add(resu, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 410, 420, 30));
 
         texto2.setFont(new java.awt.Font("Arial Black", 0, 32)); // NOI18N
         texto2.setForeground(new java.awt.Color(8, 0, 65));
         texto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 310, 30));
-
-        texto1.setFont(new java.awt.Font("Arial Black", 0, 32)); // NOI18N
-        texto1.setForeground(new java.awt.Color(8, 0, 65));
-        texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, 310, 30));
+        getContentPane().add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 390, 30));
 
         btncerrrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_cerrar.png"))); // NOI18N
         btncerrrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -107,7 +106,7 @@ public class teorema4 extends javax.swing.JFrame {
                 btncalcKeyPressed(evt);
             }
         });
-        getContentPane().add(btncalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, -1, -1));
+        getContentPane().add(btncalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
 
         btnlimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn-16.png"))); // NOI18N
         btnlimpiar.setToolTipText("");
@@ -117,11 +116,11 @@ public class teorema4 extends javax.swing.JFrame {
                 btnlimpiarMouseClicked(evt);
             }
         });
-        getContentPane().add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, -1, -1));
+        getContentPane().add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, -1, -1));
 
         fondo.setFont(new java.awt.Font("Arial Black", 0, 22)); // NOI18N
         fondo.setForeground(new java.awt.Color(8, 0, 65));
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoteo4.png"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoteo9.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 630));
 
         pack();
@@ -132,27 +131,26 @@ public class teorema4 extends javax.swing.JFrame {
     }//GEN-LAST:event_numeroActionPerformed
 
     private void numeroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            validacion=Double.parseDouble(numero.getText());
+            if(validacion<1){
             contador++;
             dato.add(numero.getText());
             numero.setText("");
-            parcial=texto2.getText();
+            parcial = texto2.getText();
             //AGREGAR A PANTALLA
-            for(int i=0; i<=contador; i++){
-            texto2.setText(parcial + dato.get(i)+"!,");
-            } 
-        }
-        if(evt.getKeyCode() == KeyEvent.VK_F){
-              numero.setVisible(false);
-             //SUMA DE N
-             for (int i = 0; i <= contador; i++) {
-              valor=Integer.parseInt(dato.get(i));
-              resul+=valor;
-             
-             }
-             
-             texto1.setText(resul+"!"); 
-            
+            for (int i = 0; i <= contador; i++) {
+                texto2.setText(parcial + dato.get(i) + "+");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "El número debe ser menor a 1");
+            numero.setText("");
+            }
+    }
+        if (evt.getKeyCode() == KeyEvent.VK_F) {
+           parcial = texto2.getText();
+           texto2.setText("1-("+parcial +")" );
+           numero.setVisible(false);
         }
     }//GEN-LAST:event_numeroKeyPressed
 
@@ -165,29 +163,18 @@ public class teorema4 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncerrrarMouseClicked
 
     private void btncalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncalcMouseClicked
-        ///////calculo de abajo
-        ///primer for obtengo los datos del arreglo
-        ////segundo for opero el factorial de cada parte del arreglo
-         for (int i = 0; i <= contador; i++) {
-             resul2=1;
-             valor=Integer.parseInt(dato.get(i));
-              for (int u = 1; u <= valor; u++) {
-              resul2*=u;
-              dato.set(i, String.valueOf(resul2));
-              }
-         }          
+
+        numero.setVisible(false);
+
         for (int i = 0; i <= contador; i++) {
-              valor=Integer.parseInt(dato.get(i));
-              multi*=valor;
-             }    
-            resu.setText(String.valueOf(multi));          
-          //////parte de arriba
-          for (int i = 1; i <= resul; i++) {
-              fact*=i;
-              }
-          System.out.println(fact);
-          divi=fact/multi;
-        resu.setText("R// "+String.valueOf(divi));
+            valor = Double.parseDouble(dato.get(i));
+            resul += valor;
+
+        }
+        resul2=1-resul;
+    
+        resu.setText(String.format("R// " + "%.2f",resul2));
+
     }//GEN-LAST:event_btncalcMouseClicked
 
     private void btncalcKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btncalcKeyPressed
@@ -195,8 +182,7 @@ public class teorema4 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-     numero.setText("");
-        numero.setVisible(true);
+
     }//GEN-LAST:event_btnlimpiarMouseClicked
 
     /**
@@ -216,20 +202,20 @@ public class teorema4 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(teorema4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teorema9.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(teorema4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teorema9.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(teorema4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teorema9.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(teorema4.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teorema9.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new teorema4().setVisible(true);
+                new teorema9().setVisible(true);
             }
         });
     }
@@ -242,7 +228,6 @@ public class teorema4 extends javax.swing.JFrame {
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField numero;
     private javax.swing.JLabel resu;
-    private javax.swing.JLabel texto1;
     private javax.swing.JLabel texto2;
     // End of variables declaration//GEN-END:variables
 }

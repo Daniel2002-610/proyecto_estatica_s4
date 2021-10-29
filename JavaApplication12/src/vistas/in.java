@@ -6,6 +6,8 @@
 package vistas;
 
 import datos.info;
+import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,6 +15,7 @@ import datos.info;
  */
 public class in extends javax.swing.JFrame {
        info inf = new info();
+       int clicks=0;
     public in() {
         initComponents();
     }
@@ -26,15 +29,28 @@ public class in extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
         text = new javax.swing.JTextField();
+        btn2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn1.setText("jButton1");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn1ActionPerformed(evt);
+            }
+        });
+
+        btn2.setText("jButton2");
+        btn2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn2MouseClicked(evt);
+            }
+        });
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
             }
         });
 
@@ -46,15 +62,19 @@ public class in extends javax.swing.JFrame {
                 .addContainerGap(93, Short.MAX_VALUE)
                 .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn2)
+                    .addComponent(btn1))
                 .addGap(74, 74, 74))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(135, 135, 135)
+                .addGap(40, 40, 40)
+                .addComponent(btn2)
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btn1)
                     .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(141, Short.MAX_VALUE))
         );
@@ -62,11 +82,25 @@ public class in extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      inf.setNombre(text.getText());
-      out abrir = new out();
-      abrir.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+      JOptionPane.showMessageDialog(null,"hola");
+      
+      
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+   
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn2MouseClicked
+       
+    if (evt.getButton()==MouseEvent.BUTTON1){
+       JOptionPane.showMessageDialog(null,"izquierda");
+    }
+    if(evt.getButton()==MouseEvent.BUTTON3){
+         JOptionPane.showMessageDialog(null,"derecha");
+    }
+    }//GEN-LAST:event_btn2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -104,7 +138,8 @@ public class in extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn2;
     private javax.swing.JTextField text;
     // End of variables declaration//GEN-END:variables
 }

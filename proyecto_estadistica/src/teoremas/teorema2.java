@@ -70,7 +70,7 @@ long resul=1,resul2=1,fresu=0;
                 numero2KeyPressed(evt);
             }
         });
-        getContentPane().add(numero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 168, 60, 30));
+        getContentPane().add(numero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 205, 60, 30));
 
         numero.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         numero.setForeground(new java.awt.Color(8, 0, 65));
@@ -86,7 +86,7 @@ long resul=1,resul2=1,fresu=0;
                 numeroKeyPressed(evt);
             }
         });
-        getContentPane().add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 168, 60, 30));
+        getContentPane().add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 205, 60, 30));
 
         btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
         btnmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -105,22 +105,22 @@ long resul=1,resul2=1,fresu=0;
         valorr.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         valorr.setForeground(new java.awt.Color(36, 11, 54));
         valorr.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(valorr, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 320, 30, 20));
+        getContentPane().add(valorr, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 30, 20));
 
         texto2.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         texto2.setForeground(new java.awt.Color(8, 0, 65));
         texto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, 230, 30));
+        getContentPane().add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 230, 30));
 
         valorn.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         valorn.setForeground(new java.awt.Color(36, 11, 54));
         valorn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        getContentPane().add(valorn, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 320, 30, 20));
+        getContentPane().add(valorn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 30, 20));
 
         texto1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         texto1.setForeground(new java.awt.Color(8, 0, 65));
         texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 230, 30));
+        getContentPane().add(texto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 230, 30));
 
         btncerrrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_cerrar.png"))); // NOI18N
         btncerrrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

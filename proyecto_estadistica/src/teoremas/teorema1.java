@@ -2,6 +2,7 @@
 package teoremas;
 
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 
 public class teorema1 extends javax.swing.JFrame {
@@ -124,14 +125,19 @@ public class teorema1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btncalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncalcMouseClicked
-        for( int i = 1; i <= valor; i++ ) {
-         resul *= i;
+        int localf=1;
+        for( int i = valor; i > 0; i-- ) {
+         localf =localf * i;
       }
-       resu.setText(String.valueOf(valor)+"! " + "= "+String.valueOf(resul));
+       resu.setText(String.valueOf(valor)+"! " + "= "+String.valueOf(localf));
+        
     }//GEN-LAST:event_btncalcMouseClicked
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-       int i=1;
+       
+        
+        
+        int i=1;
         resu.setText("");
         numero.setText("");
         valor=0;
