@@ -7,6 +7,10 @@ package vistas;
 
 import teoremas.teorema1;
 import teoremas.teorema2;
+import teoremas.teorema3;
+import teoremas.teorema4;
+import teoremas.teorema5;
+import teoremas.teorema6;
 
 /**
  *
@@ -71,18 +75,38 @@ public class menu1 extends javax.swing.JFrame {
 
         teo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema3.png"))); // NOI18N
         teo3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo3MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 300, -1, -1));
 
         teo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema4.png"))); // NOI18N
         teo4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo4MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, -1, -1));
 
         teo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema5.png"))); // NOI18N
         teo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo5MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(794, 300, -1, -1));
 
         teo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema6.png"))); // NOI18N
         teo6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo6MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 90, -1, -1));
 
         btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
@@ -149,6 +173,30 @@ public class menu1 extends javax.swing.JFrame {
       teo2.setVisible(true);
       dispose();
     }//GEN-LAST:event_teo2MouseClicked
+
+    private void teo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo3MouseClicked
+       teorema3 abrir = new teorema3();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo3MouseClicked
+
+    private void teo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo4MouseClicked
+       teorema4 abrir = new teorema4();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo4MouseClicked
+
+    private void teo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo5MouseClicked
+        teorema5 abrir = new teorema5();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo5MouseClicked
+
+    private void teo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo6MouseClicked
+      teorema6 abrir = new teorema6();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo6MouseClicked
 
     /**
      * @param args the command line arguments

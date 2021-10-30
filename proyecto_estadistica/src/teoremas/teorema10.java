@@ -6,24 +6,23 @@
 package teoremas;
 
 import java.awt.event.KeyEvent;
-import java.math.BigInteger;
-import javax.swing.JOptionPane;
-import vistas.menu1;
+import vistas.menu2;
 
 /**
  *
  * @author edgar
  */
-public class teorema2 extends javax.swing.JFrame {
+public class teorema10 extends javax.swing.JFrame {
 
-    int valor1 = 0, valor2 = 0, resta = 0;
-    long resul = 1, resul2 = 1, fresu = 0;
+    int valor1, valor2, valor3, valor4, resul, resul2;
 
-    public teorema2() {
+    public teorema10() {
         initComponents();
         this.setLocationRelativeTo(null);
         numero.setBackground(new java.awt.Color(0, 0, 0, 1));
+        numero3.setBackground(new java.awt.Color(0, 0, 0, 1));
         numero2.setBackground(new java.awt.Color(0, 0, 0, 1));
+        numero4.setBackground(new java.awt.Color(0, 0, 0, 1));
     }
 
     /**
@@ -35,15 +34,18 @@ public class teorema2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        regreso = new javax.swing.JLabel();
+        numero4 = new javax.swing.JTextField();
         numero2 = new javax.swing.JTextField();
+        numero3 = new javax.swing.JTextField();
         numero = new javax.swing.JTextField();
         btnmini = new javax.swing.JLabel();
+        resu2 = new javax.swing.JLabel();
         resu = new javax.swing.JLabel();
-        valorr = new javax.swing.JLabel();
+        texto4 = new javax.swing.JLabel();
+        texto3 = new javax.swing.JLabel();
         texto2 = new javax.swing.JLabel();
-        valorn = new javax.swing.JLabel();
         texto1 = new javax.swing.JLabel();
+        regreso2 = new javax.swing.JLabel();
         btncerrrar = new javax.swing.JLabel();
         btncalc = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JLabel();
@@ -53,24 +55,31 @@ public class teorema2 extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
-        regreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        regreso.addMouseListener(new java.awt.event.MouseAdapter() {
+        numero4.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        numero4.setForeground(new java.awt.Color(8, 0, 65));
+        numero4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        numero4.setBorder(null);
+        numero4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                regresoMouseClicked(evt);
+                numero4MouseClicked(evt);
             }
         });
-        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
+        numero4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numero4ActionPerformed(evt);
+            }
+        });
+        numero4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                numero4KeyPressed(evt);
+            }
+        });
+        getContentPane().add(numero4, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 237, 70, 30));
 
         numero2.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         numero2.setForeground(new java.awt.Color(8, 0, 65));
         numero2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         numero2.setBorder(null);
-        numero2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                numero2MouseClicked(evt);
-            }
-        });
         numero2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numero2ActionPerformed(evt);
@@ -81,7 +90,28 @@ public class teorema2 extends javax.swing.JFrame {
                 numero2KeyPressed(evt);
             }
         });
-        getContentPane().add(numero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 205, 60, 30));
+        getContentPane().add(numero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 237, 80, 30));
+
+        numero3.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        numero3.setForeground(new java.awt.Color(8, 0, 65));
+        numero3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        numero3.setBorder(null);
+        numero3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                numero3MouseClicked(evt);
+            }
+        });
+        numero3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numero3ActionPerformed(evt);
+            }
+        });
+        numero3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                numero3KeyPressed(evt);
+            }
+        });
+        getContentPane().add(numero3, new org.netbeans.lib.awtextra.AbsoluteConstraints(542, 199, 70, 30));
 
         numero.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         numero.setForeground(new java.awt.Color(8, 0, 65));
@@ -97,7 +127,7 @@ public class teorema2 extends javax.swing.JFrame {
                 numeroKeyPressed(evt);
             }
         });
-        getContentPane().add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(365, 205, 60, 30));
+        getContentPane().add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 199, 80, 30));
 
         btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
         btnmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -108,30 +138,44 @@ public class teorema2 extends javax.swing.JFrame {
         });
         getContentPane().add(btnmini, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, -1, -1));
 
+        resu2.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
+        resu2.setForeground(new java.awt.Color(8, 0, 65));
+        resu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(resu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 447, 140, 30));
+
         resu.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         resu.setForeground(new java.awt.Color(8, 0, 65));
-        resu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(resu, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 410, 30));
+        resu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(resu, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 410, 140, 30));
 
-        valorr.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        valorr.setForeground(new java.awt.Color(36, 11, 54));
-        valorr.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(valorr, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 30, 20));
+        texto4.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        texto4.setForeground(new java.awt.Color(8, 0, 65));
+        texto4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(texto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 364, 80, 30));
+
+        texto3.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
+        texto3.setForeground(new java.awt.Color(8, 0, 65));
+        texto3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(texto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 328, 80, 30));
 
         texto2.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         texto2.setForeground(new java.awt.Color(8, 0, 65));
         texto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 230, 30));
-
-        valorn.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        valorn.setForeground(new java.awt.Color(36, 11, 54));
-        valorn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        getContentPane().add(valorn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, 30, 20));
+        getContentPane().add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 364, 80, 30));
 
         texto1.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         texto1.setForeground(new java.awt.Color(8, 0, 65));
         texto1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 230, 30));
+        getContentPane().add(texto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 328, 80, 30));
+
+        regreso2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regreso2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
 
         btncerrrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_cerrar.png"))); // NOI18N
         btncerrrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -154,7 +198,7 @@ public class teorema2 extends javax.swing.JFrame {
                 btncalcKeyPressed(evt);
             }
         });
-        getContentPane().add(btncalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 553, -1, -1));
+        getContentPane().add(btncalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, -1, -1));
 
         btnlimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn-16.png"))); // NOI18N
         btnlimpiar.setToolTipText("");
@@ -164,15 +208,32 @@ public class teorema2 extends javax.swing.JFrame {
                 btnlimpiarMouseClicked(evt);
             }
         });
-        getContentPane().add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 553, -1, -1));
+        getContentPane().add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, -1, -1));
 
         fondo.setFont(new java.awt.Font("Arial Black", 0, 22)); // NOI18N
         fondo.setForeground(new java.awt.Color(8, 0, 65));
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoteo2.png"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/fondoteo10.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void numero3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_numero3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numero3MouseClicked
+
+    private void numero3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numero3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numero3ActionPerformed
+
+    private void numero3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numero3KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            valor3 = Integer.parseInt(numero3.getText());
+            texto3.setText(numero3.getText());
+            numero3.setText("");
+            numero4.requestFocus();
+        }
+    }//GEN-LAST:event_numero3KeyPressed
 
     private void numeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroActionPerformed
         // TODO add your handling code here:
@@ -181,13 +242,9 @@ public class teorema2 extends javax.swing.JFrame {
     private void numeroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             valor1 = Integer.parseInt(numero.getText());
-            valorn.setText(numero.getText());
+            texto1.setText(numero.getText());
             numero.setText("");
-
-            texto1.setText(String.valueOf(valor1) + "!");
-
             numero2.requestFocus();
-
         }
     }//GEN-LAST:event_numeroKeyPressed
 
@@ -195,42 +252,60 @@ public class teorema2 extends javax.swing.JFrame {
         this.setExtendedState(ICONIFIED);
     }//GEN-LAST:event_btnminiMouseClicked
 
+    private void btncerrrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncerrrarMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btncerrrarMouseClicked
+
     private void btncalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncalcMouseClicked
-        for (int i = 1; i <= valor1; i++) {
-            resul *= i;
-        }
-
-        resta = valor1 - valor2;
-
-        for (int i = 1; i <= resta; i++) {
-            resul2 *= i;
-        }
-
-        fresu = resul / resul2;
-
-        resu.setText("R//" + String.valueOf(fresu));
+        resul = valor1 * valor3;
+        resul2 = valor2 * valor4;
+        resu.setText(String.valueOf(resul));
+        resu2.setText(String.valueOf(resul2));
 
 
     }//GEN-LAST:event_btncalcMouseClicked
 
     private void btncalcKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btncalcKeyPressed
-
+        
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-        valor1 = 0;
-        valor2 = 0;
-        resta = 0;
-        resul = 1;
-        resul2 = 1;
-        fresu = 0;
-        numero.setText("");
+numero.setText("");
         numero2.setText("");
+        numero3.setText("");
+        numero4.setText("");
         resu.setText("");
+        resu2.setText("");
         texto1.setText("");
         texto2.setText("");
-
+        texto3.setText("");
+        texto4.setText("");
+        valor1 = 0;
+        valor2 = 0;
+        valor3 = 0;
+        valor4 = 0;
+        resul = 0;
+        resul2 = 0;
+        numero.requestFocus();
     }//GEN-LAST:event_btnlimpiarMouseClicked
+
+    private void numero4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_numero4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numero4MouseClicked
+
+    private void numero4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numero4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numero4ActionPerformed
+
+    private void numero4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numero4KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                valor4 = Integer.parseInt(numero4.getText());
+                texto4.setText(numero4.getText());
+                numero4.setText("");
+            }
+        }
+    }//GEN-LAST:event_numero4KeyPressed
 
     private void numero2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numero2ActionPerformed
         // TODO add your handling code here:
@@ -239,26 +314,18 @@ public class teorema2 extends javax.swing.JFrame {
     private void numero2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numero2KeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             valor2 = Integer.parseInt(numero2.getText());
-            valorr.setText(numero2.getText());
+            texto2.setText(numero2.getText());
             numero2.setText("");
+            numero3.requestFocus();
 
-            texto2.setText("(" + String.valueOf(valor1) + "-" + String.valueOf(valor2) + ")!");
         }
     }//GEN-LAST:event_numero2KeyPressed
 
-    private void numero2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_numero2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_numero2MouseClicked
-
-    private void btncerrrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncerrrarMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_btncerrrarMouseClicked
-
-    private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked
-        menu1 ventana2 = new menu1();
+    private void regreso2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regreso2MouseClicked
+        menu2 ventana2 = new menu2();
         ventana2.setVisible(true);
         dispose();
-    }//GEN-LAST:event_regresoMouseClicked
+    }//GEN-LAST:event_regreso2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -277,20 +344,20 @@ public class teorema2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(teorema2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teorema10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(teorema2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teorema10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(teorema2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teorema10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(teorema2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(teorema10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new teorema2().setVisible(true);
+                new teorema10().setVisible(true);
             }
         });
     }
@@ -303,12 +370,16 @@ public class teorema2 extends javax.swing.JFrame {
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField numero;
     private javax.swing.JTextField numero2;
+    private javax.swing.JTextField numero3;
+    private javax.swing.JTextField numero4;
     private javax.swing.JLabel regreso;
+    private javax.swing.JLabel regreso1;
+    private javax.swing.JLabel regreso2;
     private javax.swing.JLabel resu;
+    private javax.swing.JLabel resu2;
     private javax.swing.JLabel texto1;
     private javax.swing.JLabel texto2;
-    private javax.swing.JLabel valorn;
-    private javax.swing.JLabel valorr;
+    private javax.swing.JLabel texto3;
+    private javax.swing.JLabel texto4;
     // End of variables declaration//GEN-END:variables
-
 }

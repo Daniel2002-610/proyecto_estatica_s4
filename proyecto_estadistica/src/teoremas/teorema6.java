@@ -6,6 +6,7 @@
 package teoremas;
 
 import java.awt.event.KeyEvent;
+import vistas.menu1;
 
 /**
  *
@@ -32,6 +33,7 @@ public class teorema6 extends javax.swing.JFrame {
         numero = new javax.swing.JTextField();
         btnmini = new javax.swing.JLabel();
         resu = new javax.swing.JLabel();
+        regreso = new javax.swing.JLabel();
         valorr = new javax.swing.JLabel();
         texto2 = new javax.swing.JLabel();
         valorn = new javax.swing.JLabel();
@@ -95,6 +97,15 @@ public class teorema6 extends javax.swing.JFrame {
         resu.setForeground(new java.awt.Color(8, 0, 65));
         resu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         getContentPane().add(resu, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 410, 30));
+
+        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
 
         valorr.setFont(new java.awt.Font("Arial Black", 0, 30)); // NOI18N
         valorr.setForeground(new java.awt.Color(36, 11, 54));
@@ -238,7 +249,14 @@ public class teorema6 extends javax.swing.JFrame {
         valor = 0;
         valor2 = 0;
         resta = 0;
+        numero.requestFocus();
     }//GEN-LAST:event_btnlimpiarMouseClicked
+
+    private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked
+        menu1 ventana2 = new menu1();
+        ventana2.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_regresoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -283,6 +301,7 @@ public class teorema6 extends javax.swing.JFrame {
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField numero;
     private javax.swing.JTextField numero2;
+    private javax.swing.JLabel regreso;
     private javax.swing.JLabel resu;
     private javax.swing.JLabel texto1;
     private javax.swing.JLabel texto2;

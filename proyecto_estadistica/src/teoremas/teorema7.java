@@ -6,6 +6,7 @@
 package teoremas;
 
 import java.awt.event.KeyEvent;
+import vistas.menu2;
 
 /**
  *
@@ -13,8 +14,9 @@ import java.awt.event.KeyEvent;
  */
 public class teorema7 extends javax.swing.JFrame {
 
-   String parcial;
-   double valora,valorb,valorc,resultado=0.00;
+    String parcial;
+    double valora, valorb, valorc, resultado = 0.00;
+
     public teorema7() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -23,7 +25,6 @@ public class teorema7 extends javax.swing.JFrame {
         numero3.setBackground(new java.awt.Color(0, 0, 0, 1));
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -37,6 +38,7 @@ public class teorema7 extends javax.swing.JFrame {
         texto1 = new javax.swing.JLabel();
         btncerrrar = new javax.swing.JLabel();
         btncalc = new javax.swing.JLabel();
+        regreso = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
@@ -149,6 +151,15 @@ public class teorema7 extends javax.swing.JFrame {
         });
         getContentPane().add(btncalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, -1, -1));
 
+        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
+
         btnlimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn-16.png"))); // NOI18N
         btnlimpiar.setToolTipText("");
         btnlimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -177,11 +188,11 @@ public class teorema7 extends javax.swing.JFrame {
 
     private void numero2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numero2KeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-           parcial=texto2.getText();
-           texto2.setText(parcial+"+"+numero2.getText());
-           valorb=Double.parseDouble(numero2.getText());
-           numero2.setText("");
-           numero3.requestFocus();
+            parcial = texto2.getText();
+            texto2.setText(parcial + "+" + numero2.getText());
+            valorb = Double.parseDouble(numero2.getText());
+            numero2.setText("");
+            numero3.requestFocus();
         }
     }//GEN-LAST:event_numero2KeyPressed
 
@@ -193,7 +204,7 @@ public class teorema7 extends javax.swing.JFrame {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             texto1.setText("P(AUB) = P(A) + P(B)- P(A ∩ B) = ");
             texto2.setText(numero.getText());
-            valora=Double.parseDouble(numero.getText());
+            valora = Double.parseDouble(numero.getText());
             numero.setText("");
             numero2.requestFocus();
 
@@ -209,9 +220,9 @@ public class teorema7 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncerrrarMouseClicked
 
     private void btncalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncalcMouseClicked
-     resultado=(valora+valorb)-valorc;
-     resu.setText(String.format("R// "+ "%.2f",resultado));
-    
+        resultado = (valora + valorb) - valorc;
+        resu.setText(String.format("R// " + "%.2f", resultado));
+
     }//GEN-LAST:event_btncalcMouseClicked
 
     private void btncalcKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btncalcKeyPressed
@@ -219,7 +230,19 @@ public class teorema7 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-       
+        numero.setText("");
+        numero2.setText("");
+        numero3.setText("");
+        resu.setText("");
+        texto1.setText("");
+        texto2.setText("");
+        parcial = "";
+        valora = 0.00;
+        valorb = 0.00;
+        valorc = 0.00;
+        resultado = 0.00;
+        numero.requestFocus();
+
     }//GEN-LAST:event_btnlimpiarMouseClicked
 
     private void numero3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_numero3MouseClicked
@@ -231,15 +254,20 @@ public class teorema7 extends javax.swing.JFrame {
     }//GEN-LAST:event_numero3ActionPerformed
 
     private void numero3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numero3KeyPressed
-      if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-           parcial=texto2.getText();
-           texto2.setText(parcial+"-"+numero3.getText());
-           valorc=Double.parseDouble(numero3.getText());
-           numero3.setText("");
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            parcial = texto2.getText();
+            texto2.setText(parcial + "-" + numero3.getText());
+            valorc = Double.parseDouble(numero3.getText());
+            numero3.setText("");
 
-         
         }
     }//GEN-LAST:event_numero3KeyPressed
+
+    private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked
+        menu2 ventana2 = new menu2();
+        ventana2.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_regresoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -285,6 +313,7 @@ public class teorema7 extends javax.swing.JFrame {
     private javax.swing.JTextField numero;
     private javax.swing.JTextField numero2;
     private javax.swing.JTextField numero3;
+    private javax.swing.JLabel regreso;
     private javax.swing.JLabel resu;
     private javax.swing.JLabel texto1;
     private javax.swing.JLabel texto2;

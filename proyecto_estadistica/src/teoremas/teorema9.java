@@ -8,6 +8,7 @@ package teoremas;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import vistas.menu2;
 
 /**
  *
@@ -17,9 +18,8 @@ public class teorema9 extends javax.swing.JFrame {
 
     ArrayList<String> dato = new ArrayList<String>();
     double contador = -1;
-    double resul = 0.00, valor = 0.00,resul2=0.00,validacion=0.00;
+    double resul = 0.00, valor = 0.00, resul2 = 0.00, validacion = 0.00;
     String parcial, conver;
-    
 
     public teorema9() {
         initComponents();
@@ -43,6 +43,7 @@ public class teorema9 extends javax.swing.JFrame {
         texto2 = new javax.swing.JLabel();
         btncerrrar = new javax.swing.JLabel();
         btncalc = new javax.swing.JLabel();
+        regreso = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
@@ -108,6 +109,15 @@ public class teorema9 extends javax.swing.JFrame {
         });
         getContentPane().add(btncalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, -1, -1));
 
+        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
+
         btnlimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn-16.png"))); // NOI18N
         btnlimpiar.setToolTipText("");
         btnlimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -132,25 +142,27 @@ public class teorema9 extends javax.swing.JFrame {
 
     private void numeroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            validacion=Double.parseDouble(numero.getText());
-            if(validacion<1){
-            contador++;
-            dato.add(numero.getText());
-            numero.setText("");
-            parcial = texto2.getText();
-            //AGREGAR A PANTALLA
-            for (int i = 0; i <= contador; i++) {
-                texto2.setText(parcial + dato.get(i) + "+");
+            validacion = Double.parseDouble(numero.getText());
+            if (validacion < 1) {
+                contador++;
+                dato.add(numero.getText());
+                numero.setText("");
+                parcial = texto2.getText();
+                //AGREGAR A PANTALLA
+                for (int i = 0; i <= contador; i++) {
+                    texto2.setText(parcial + dato.get(i) + "+");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "El número debe ser menor a 1");
+                numero.setText("");
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "El número debe ser menor a 1");
-            numero.setText("");
-            }
-    }
+        }
         if (evt.getKeyCode() == KeyEvent.VK_F) {
-           parcial = texto2.getText();
-           texto2.setText("1-("+parcial +")" );
            numero.setVisible(false);
+            parcial = texto2.getText();
+            texto2.setText("1-(" + parcial + ")");
+           
+           
         }
     }//GEN-LAST:event_numeroKeyPressed
 
@@ -164,16 +176,16 @@ public class teorema9 extends javax.swing.JFrame {
 
     private void btncalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncalcMouseClicked
 
-        numero.setVisible(false);
+        
 
         for (int i = 0; i <= contador; i++) {
             valor = Double.parseDouble(dato.get(i));
             resul += valor;
 
         }
-        resul2=1-resul;
-    
-        resu.setText(String.format("R// " + "%.2f",resul2));
+        resul2 = 1 - resul;
+
+        resu.setText(String.format("R// " + "%.2f", resul2));
 
     }//GEN-LAST:event_btncalcMouseClicked
 
@@ -182,8 +194,25 @@ public class teorema9 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-
+        numero.setVisible(true);
+            dato.clear();
+        contador = -1;
+        resul = 0.00;
+        valor = 0.00;
+        resul2 = 0.00;
+        validacion = 0.00;
+        parcial = "";
+        conver = "";
+        numero.setText("");
+        resu.setText("");
+        texto2.setText("");
     }//GEN-LAST:event_btnlimpiarMouseClicked
+
+    private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked
+        menu2 ventana2 = new menu2();
+        ventana2.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_regresoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -227,6 +256,7 @@ public class teorema9 extends javax.swing.JFrame {
     private javax.swing.JLabel btnmini;
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField numero;
+    private javax.swing.JLabel regreso;
     private javax.swing.JLabel resu;
     private javax.swing.JLabel texto2;
     // End of variables declaration//GEN-END:variables

@@ -3,6 +3,7 @@ package teoremas;
 
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import vistas.menu1;
 
 
 public class teorema1 extends javax.swing.JFrame {
@@ -20,10 +21,12 @@ public class teorema1 extends javax.swing.JFrame {
     private void initComponents() {
 
         numero = new javax.swing.JTextField();
+        regreso = new javax.swing.JLabel();
         btnmini = new javax.swing.JLabel();
         btncerrrar = new javax.swing.JLabel();
         resu = new javax.swing.JLabel();
         btncalc = new javax.swing.JLabel();
+        regreso1 = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
@@ -46,6 +49,15 @@ public class teorema1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(numero, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 70, 30));
+
+        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
 
         btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
         btnmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -83,6 +95,15 @@ public class teorema1 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btncalc, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, -1, -1));
+
+        regreso1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regreso1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
 
         btnlimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn-16.png"))); // NOI18N
         btnlimpiar.setToolTipText("");
@@ -126,6 +147,9 @@ public class teorema1 extends javax.swing.JFrame {
 
     private void btncalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncalcMouseClicked
         int localf=1;
+        if(valor==0){
+        resu.setText(String.valueOf(valor)+"! " + "= "+"1");
+        }
         for( int i = valor; i > 0; i-- ) {
          localf =localf * i;
       }
@@ -134,9 +158,7 @@ public class teorema1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcMouseClicked
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-       
-        
-        
+
         int i=1;
         resu.setText("");
         numero.setText("");
@@ -144,6 +166,16 @@ public class teorema1 extends javax.swing.JFrame {
         resul=1;
 
     }//GEN-LAST:event_btnlimpiarMouseClicked
+
+    private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked
+        menu1 ventana2 = new menu1();
+        ventana2.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_regresoMouseClicked
+
+    private void regreso1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regreso1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_regreso1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -187,6 +219,8 @@ public class teorema1 extends javax.swing.JFrame {
     private javax.swing.JLabel btnmini;
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField numero;
+    private javax.swing.JLabel regreso;
+    private javax.swing.JLabel regreso1;
     private javax.swing.JLabel resu;
     // End of variables declaration//GEN-END:variables
 }

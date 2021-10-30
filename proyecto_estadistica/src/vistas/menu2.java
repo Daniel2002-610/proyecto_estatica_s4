@@ -5,6 +5,13 @@
  */
 package vistas;
 
+import teoremas.teorema10;
+import teoremas.teorema11;
+import teoremas.teorema12;
+import teoremas.teorema7;
+import teoremas.teorema8;
+import teoremas.teorema9;
+
 /**
  *
  * @author edgar
@@ -45,26 +52,56 @@ public class menu2 extends javax.swing.JFrame {
 
         teo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema7.png"))); // NOI18N
         teo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo1MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 300, -1, -1));
 
         teo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema8.png"))); // NOI18N
         teo2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo2MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 90, -1, -1));
 
         teo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema9.png"))); // NOI18N
         teo3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo3MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(417, 300, -1, -1));
 
         teo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema10.png"))); // NOI18N
         teo4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo4MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 90, -1, -1));
 
         teo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema11.png"))); // NOI18N
         teo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo5MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(795, 300, -1, -1));
 
         teo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/teorema12.png"))); // NOI18N
         teo6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        teo6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                teo6MouseClicked(evt);
+            }
+        });
         getContentPane().add(teo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(985, 90, -1, -1));
 
         marcador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/marcador1.png"))); // NOI18N
@@ -119,6 +156,43 @@ public class menu2 extends javax.swing.JFrame {
     private void btncerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btncerrarMouseClicked
+
+    private void teo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo1MouseClicked
+        teorema7 abrir = new teorema7();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo1MouseClicked
+
+    private void teo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo2MouseClicked
+        teorema8 abrir = new teorema8();
+        abrir.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_teo2MouseClicked
+
+    private void teo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo3MouseClicked
+        teorema9 abrir = new teorema9();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo3MouseClicked
+
+    private void teo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo4MouseClicked
+       teorema10 abrir = new teorema10();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo4MouseClicked
+
+    private void teo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo5MouseClicked
+       teorema11 abrir = new teorema11();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo5MouseClicked
+
+    private void teo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_teo6MouseClicked
+        teorema12 abrir = new teorema12();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_teo6MouseClicked
 
     /**
      * @param args the command line arguments

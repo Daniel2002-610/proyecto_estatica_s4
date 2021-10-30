@@ -6,6 +6,7 @@
 package teoremas;
 
 import java.awt.event.KeyEvent;
+import vistas.menu1;
 
 /**
  *
@@ -36,6 +37,7 @@ public class teorema3 extends javax.swing.JFrame {
         TEXTO = new javax.swing.JLabel();
         texto1 = new javax.swing.JLabel();
         btncerrrar = new javax.swing.JLabel();
+        regreso = new javax.swing.JLabel();
         btncalc = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
@@ -62,9 +64,8 @@ public class teorema3 extends javax.swing.JFrame {
 
         valorn.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
         valorn.setForeground(new java.awt.Color(36, 11, 54));
-        valorn.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        valorn.setText("PC");
-        getContentPane().add(valorn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, -1, 30));
+        valorn.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        getContentPane().add(valorn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 350, 30, 30));
 
         btnmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_minimizar.png"))); // NOI18N
         btnmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -99,6 +100,15 @@ public class teorema3 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btncerrrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, -1, -1));
+
+        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
 
         btncalc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn-15.png"))); // NOI18N
         btncalc.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -169,8 +179,20 @@ public class teorema3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-       
+       valor=0;
+       resul=1;
+       resta=0;
+       numero.setText("");
+        valorn.setText("");
+         resu.setText("");
+          texto1.setText("");
     }//GEN-LAST:event_btnlimpiarMouseClicked
+
+    private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked
+        menu1 ventana2 = new menu1();
+        ventana2.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_regresoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -215,6 +237,7 @@ public class teorema3 extends javax.swing.JFrame {
     private javax.swing.JLabel btnmini;
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField numero;
+    private javax.swing.JLabel regreso;
     private javax.swing.JLabel resu;
     private javax.swing.JLabel texto1;
     private javax.swing.JLabel valorn;

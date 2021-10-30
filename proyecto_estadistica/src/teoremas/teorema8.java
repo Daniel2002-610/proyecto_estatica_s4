@@ -7,20 +7,23 @@ package teoremas;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import vistas.menu2;
 
 /**
  *
  * @author edgar
  */
 public class teorema8 extends javax.swing.JFrame {
- ArrayList<String> dato = new ArrayList<String>();
-   double contador=-1;
-   double resul=0.00,valor=0.00;
-      String parcial,conver;
+
+    ArrayList<String> dato = new ArrayList<String>();
+    double contador = -1;
+    double resul = 0.00, valor = 0.00;
+    String parcial, conver;
+
     public teorema8() {
         initComponents();
         this.setLocationRelativeTo(null);
-         numero.setBackground(new java.awt.Color(0,0,0,1));
+        numero.setBackground(new java.awt.Color(0, 0, 0, 1));
     }
 
     /**
@@ -36,6 +39,7 @@ public class teorema8 extends javax.swing.JFrame {
         btnmini = new javax.swing.JLabel();
         resu = new javax.swing.JLabel();
         texto2 = new javax.swing.JLabel();
+        regreso = new javax.swing.JLabel();
         btncerrrar = new javax.swing.JLabel();
         btncalc = new javax.swing.JLabel();
         btnlimpiar = new javax.swing.JLabel();
@@ -79,6 +83,15 @@ public class teorema8 extends javax.swing.JFrame {
         texto2.setForeground(new java.awt.Color(8, 0, 65));
         texto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 390, 30));
+
+        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
 
         btncerrrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btn_cerrar.png"))); // NOI18N
         btncerrrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -126,17 +139,17 @@ public class teorema8 extends javax.swing.JFrame {
     }//GEN-LAST:event_numeroActionPerformed
 
     private void numeroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             contador++;
             dato.add(numero.getText());
             numero.setText("");
-            parcial=texto2.getText();
+            parcial = texto2.getText();
             //AGREGAR A PANTALLA
-            for(int i=0; i<=contador; i++){
-                texto2.setText(parcial + dato.get(i)+"+");
+            for (int i = 0; i <= contador; i++) {
+                texto2.setText(parcial + dato.get(i) + "+");
             }
         }
-        
+
     }//GEN-LAST:event_numeroKeyPressed
 
     private void btnminiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnminiMouseClicked
@@ -149,15 +162,15 @@ public class teorema8 extends javax.swing.JFrame {
 
     private void btncalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncalcMouseClicked
 
-            numero.setVisible(false);
-     
-            for (int i = 0; i <= contador; i++) {
-                valor=Double.parseDouble(dato.get(i));
-                resul+=valor;
+        //numero.setVisible(false);
 
-            }
+        for (int i = 0; i <= contador; i++) {
+            valor = Double.parseDouble(dato.get(i));
+            resul += valor;
 
-            resu.setText(String.valueOf("R// "+resul));
+        }
+
+        resu.setText(String.valueOf("R// " + resul));
 
 
     }//GEN-LAST:event_btncalcMouseClicked
@@ -167,8 +180,22 @@ public class teorema8 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-
+        dato.clear();
+        contador = -1;
+        resul = 0.00;
+        valor = 0.00;
+        parcial = "";
+        conver = "";
+        texto2.setText("");
+        numero.setText("");
+        resu.setText("");
     }//GEN-LAST:event_btnlimpiarMouseClicked
+
+    private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked
+        menu2 ventana2 = new menu2();
+        ventana2.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_regresoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -212,6 +239,7 @@ public class teorema8 extends javax.swing.JFrame {
     private javax.swing.JLabel btnmini;
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField numero;
+    private javax.swing.JLabel regreso;
     private javax.swing.JLabel resu;
     private javax.swing.JLabel texto2;
     // End of variables declaration//GEN-END:variables

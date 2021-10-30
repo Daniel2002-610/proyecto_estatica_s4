@@ -7,20 +7,23 @@ package teoremas;
 
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import vistas.menu1;
 
 /**
  *
  * @author edgar
  */
 public class teorema4 extends javax.swing.JFrame {
+
     ArrayList<String> dato = new ArrayList<String>();
-   int valor=0,resul=0,contador=-1,multi=1,resul2=1,fact=1,divi=0;
-   String parcial,conver;
+    int valor = 0, resul = 0, contador = -1, multi = 1, resul2 = 1, fact = 1, divi = 0;
+    String parcial, conver;
+
     public teorema4() {
         initComponents();
         this.setLocationRelativeTo(null);
-         numero.setBackground(new java.awt.Color(0,0,0,1));
-        
+        numero.setBackground(new java.awt.Color(0, 0, 0, 1));
+
     }
 
     /**
@@ -36,6 +39,7 @@ public class teorema4 extends javax.swing.JFrame {
         btnmini = new javax.swing.JLabel();
         resu = new javax.swing.JLabel();
         texto2 = new javax.swing.JLabel();
+        regreso = new javax.swing.JLabel();
         texto1 = new javax.swing.JLabel();
         btncerrrar = new javax.swing.JLabel();
         btncalc = new javax.swing.JLabel();
@@ -80,6 +84,15 @@ public class teorema4 extends javax.swing.JFrame {
         texto2.setForeground(new java.awt.Color(8, 0, 65));
         texto2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getContentPane().add(texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 310, 30));
+
+        regreso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/btnida-11.png"))); // NOI18N
+        regreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        regreso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regresoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(regreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 590, -1, -1));
 
         texto1.setFont(new java.awt.Font("Arial Black", 0, 32)); // NOI18N
         texto1.setForeground(new java.awt.Color(8, 0, 65));
@@ -132,27 +145,27 @@ public class teorema4 extends javax.swing.JFrame {
     }//GEN-LAST:event_numeroActionPerformed
 
     private void numeroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroKeyPressed
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             contador++;
             dato.add(numero.getText());
             numero.setText("");
-            parcial=texto2.getText();
+            parcial = texto2.getText();
             //AGREGAR A PANTALLA
-            for(int i=0; i<=contador; i++){
-            texto2.setText(parcial + dato.get(i)+"!,");
-            } 
+            for (int i = 0; i <= contador; i++) {
+                texto2.setText(parcial + dato.get(i) + "!,");
+            }
         }
-        if(evt.getKeyCode() == KeyEvent.VK_F){
-              numero.setVisible(false);
-             //SUMA DE N
-             for (int i = 0; i <= contador; i++) {
-              valor=Integer.parseInt(dato.get(i));
-              resul+=valor;
-             
-             }
-             
-             texto1.setText(resul+"!"); 
-            
+        if (evt.getKeyCode() == KeyEvent.VK_F) {
+            numero.setVisible(false);
+            //SUMA DE N
+            for (int i = 0; i <= contador; i++) {
+                valor = Integer.parseInt(dato.get(i));
+                resul += valor;
+
+            }
+
+            texto1.setText(resul + "!");
+
         }
     }//GEN-LAST:event_numeroKeyPressed
 
@@ -168,26 +181,26 @@ public class teorema4 extends javax.swing.JFrame {
         ///////calculo de abajo
         ///primer for obtengo los datos del arreglo
         ////segundo for opero el factorial de cada parte del arreglo
-         for (int i = 0; i <= contador; i++) {
-             resul2=1;
-             valor=Integer.parseInt(dato.get(i));
-              for (int u = 1; u <= valor; u++) {
-              resul2*=u;
-              dato.set(i, String.valueOf(resul2));
-              }
-         }          
         for (int i = 0; i <= contador; i++) {
-              valor=Integer.parseInt(dato.get(i));
-              multi*=valor;
-             }    
-            resu.setText(String.valueOf(multi));          
-          //////parte de arriba
-          for (int i = 1; i <= resul; i++) {
-              fact*=i;
-              }
-          System.out.println(fact);
-          divi=fact/multi;
-        resu.setText("R// "+String.valueOf(divi));
+            resul2 = 1;
+            valor = Integer.parseInt(dato.get(i));
+            for (int u = 1; u <= valor; u++) {
+                resul2 *= u;
+                dato.set(i, String.valueOf(resul2));
+            }
+        }
+        for (int i = 0; i <= contador; i++) {
+            valor = Integer.parseInt(dato.get(i));
+            multi *= valor;
+        }
+        resu.setText(String.valueOf(multi));
+        //////parte de arriba
+        for (int i = 1; i <= resul; i++) {
+            fact *= i;
+        }
+       
+        divi = fact / multi;
+        resu.setText("R// " + String.valueOf(divi));
     }//GEN-LAST:event_btncalcMouseClicked
 
     private void btncalcKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btncalcKeyPressed
@@ -195,9 +208,29 @@ public class teorema4 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-     numero.setText("");
+        texto1.setText("");
+        texto2.setText("");
+        resu.setText("");
+        numero.setText("");
+        dato.clear();
+        valor = 0;
+        resul = 0;
+        contador = -1;
+        multi = 1;
+        resul2 = 1;
+        fact = 1;
+        divi = 0;
+        parcial = "";
+        conver = "";
         numero.setVisible(true);
+
     }//GEN-LAST:event_btnlimpiarMouseClicked
+
+    private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked
+        menu1 ventana2 = new menu1();
+        ventana2.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_regresoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -241,6 +274,7 @@ public class teorema4 extends javax.swing.JFrame {
     private javax.swing.JLabel btnmini;
     private javax.swing.JLabel fondo;
     private javax.swing.JTextField numero;
+    private javax.swing.JLabel regreso;
     private javax.swing.JLabel resu;
     private javax.swing.JLabel texto1;
     private javax.swing.JLabel texto2;
