@@ -13,12 +13,13 @@ import vistas.menu1;
  * @author edgar
  */
 public class teorema3 extends javax.swing.JFrame {
-  long valor=0,resul=1,resta=0;
-   
+
+    long valor = 0, resul = 1, resta = 0;
+
     public teorema3() {
         initComponents();
-         this.setLocationRelativeTo(null);
-         numero.setBackground(new java.awt.Color(0,0,0,1));
+        this.setLocationRelativeTo(null);
+        numero.setBackground(new java.awt.Color(0, 0, 0, 1));
     }
 
     /**
@@ -147,12 +148,12 @@ public class teorema3 extends javax.swing.JFrame {
     }//GEN-LAST:event_numeroActionPerformed
 
     private void numeroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numeroKeyPressed
-  if(evt.getKeyCode() == KeyEvent.VK_ENTER){ 
-      valor=Integer.parseInt(numero.getText());
-      valorn.setText(numero.getText());       
-      texto1.setText("= ( " + numero.getText() + " - 1 )!");
-       numero.setText("");  
-  }      
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            valor = Integer.parseInt(numero.getText());
+            valorn.setText(numero.getText());
+            texto1.setText("= ( " + numero.getText() + " - 1 )!");
+            numero.setText("");
+        }
     }//GEN-LAST:event_numeroKeyPressed
 
     private void btnminiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnminiMouseClicked
@@ -164,13 +165,13 @@ public class teorema3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncerrrarMouseClicked
 
     private void btncalcMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncalcMouseClicked
-       resta=valor-1;
-      
-       for( int i = 1; i <= resta; i++ ) {
-         resul *= i;
-      }
-       
-      resu.setText("R//" + String.valueOf(resul));
+        resta = valor - 1;
+
+        for (int i = 1; i <= resta; i++) {
+            resul *= i;
+        }
+
+        resu.setText("R//" + String.valueOf(resul));
 
     }//GEN-LAST:event_btncalcMouseClicked
 
@@ -179,13 +180,13 @@ public class teorema3 extends javax.swing.JFrame {
     }//GEN-LAST:event_btncalcKeyPressed
 
     private void btnlimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnlimpiarMouseClicked
-       valor=0;
-       resul=1;
-       resta=0;
-       numero.setText("");
+        valor = 0;
+        resul = 1;
+        resta = 0;
+        numero.setText("");
         valorn.setText("");
-         resu.setText("");
-          texto1.setText("");
+        resu.setText("");
+        texto1.setText("");
     }//GEN-LAST:event_btnlimpiarMouseClicked
 
     private void regresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regresoMouseClicked

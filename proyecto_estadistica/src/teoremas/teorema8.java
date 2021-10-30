@@ -170,7 +170,7 @@ public class teorema8 extends javax.swing.JFrame {
 
         }
 
-        resu.setText(String.valueOf("R// " + resul));
+        resu.setText(String.format("R// " + "%.2f",resul));
 
 
     }//GEN-LAST:event_btncalcMouseClicked

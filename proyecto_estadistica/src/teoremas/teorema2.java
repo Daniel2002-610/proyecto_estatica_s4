@@ -224,6 +224,8 @@ public class teorema2 extends javax.swing.JFrame {
         resul = 1;
         resul2 = 1;
         fresu = 0;
+         valorn.setText("");
+          valorr.setText("");
         numero.setText("");
         numero2.setText("");
         resu.setText("");
